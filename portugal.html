@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária Portuguesa | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Portugal 🇵🇹</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <!-- Menu de Seleção de Pratos -->
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('bacalhau')">🐟 Bacalhau à Brás</button>
+            <button class="dish-btn" onclick="selectDish('pastel')">🥧 Pastel de Nata</button>
+            <button class="dish-btn" onclick="selectDish('caldo')">🥣 Caldo Verde</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <!-- Cartão Principal da Receita com Efeito Glass -->
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Bacalhau à Brás</h2>
+            <p class="recipe-description" id="dishDescription">
+                Um dos pratos mais emblemáticos de Portugal, originário de Lisboa. Consiste em bacalhau desalmado esfiado, batata palha fina, ovos mexidos e cebola, finalizado com salsa e azeitonas pretas.
+            </p>
+
+            <!-- Imagem do Prato -->
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/bacalhau.jpeg" alt="Prato Típico Português">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 30min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Fácil</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>400g de bacalhau desalmado e desfiado</li>
+                    <li>300g de batata palha de boa qualidade</li>
+                    <li>1 cebola grande cortada em rodelas finas</li>
+                    <li>2 dentes de alho picados</li>
+                    <li>4 ovos batidos</li>
+                    <li>Azeite de oliva, salsa picada, sal e pimenta a gosto</li>
+                    <li>Azeitonas pretas para decorar</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Numa frigideira larga, aqueça um bom fio de azeite e refogue a cebola e o alho até ficarem translúcidos.</li>
+                    <li>Adicione o bacalhau desfiado e deixe cozinhar por cerca de 5 minutos, mexendo bem.</li>
+                    <li>Junte a batata palha à frigideira e envolva tudo muito bem com o bacalhau e a cebola.</li>
+                    <li>Reduza o lume para o mínimo, adicione os ovos batidos e mexa constantemente até que os ovos fiquem cremosos mas não totalmente secos.</li>
+                    <li>Retire do lume, polvilhe com salsa fresca picada e decore com azeitonas pretas antes de servir.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Troca de Pratos Portugueses -->
+    <script>
+        const recipes = {
+            bacalhau: {
+                title: "Bacalhau à Brás",
+                description: "Um dos pratos mais emblemáticos de Portugal, originário de Lisboa. Consiste em bacalhau desalmado esfiado, batata palha fina, ovos mexidos e cebola, finalizado com salsa e azeitonas pretas.",
+                image: "images/bacalhau.jpeg",
+                time: "⏱️ Tempo: 30min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: [
+                    "400g de bacalhau desalmado e desfiado",
+                    "300g de batata palha de boa qualidade",
+                    "1 cebola grande cortada em rodelas finas",
+                    "2 dentes de alho picados",
+                    "4 ovos batidos",
+                    "Azeite de oliva, salsa picada, sal e pimenta a gosto",
+                    "Azeitonas pretas para decorar"
+                ],
+                instructions: [
+                    "Numa frigideira larga, aqueça um bom fio de azeite e refogue a cebola e o alho até ficarem translúcidos.",
+                    "Adicione o bacalhau desfiado e deixe cozinhar por cerca de 5 minutos, mexendo bem.",
+                    "Junte a batata palha à frigideira e envolva tudo muito bem com o bacalhau e a cebola.",
+                    "Reduza o lume para o mínimo, adicione os ovos batidos e mexa constantemente até que os ovos fiquem cremosos mas não totalmente secos.",
+                    "Retire do lume, polvilhe com salsa fresca picada e decore com azeitonas pretas antes de servir."
+                ]
+            },
+            pastel: {
+                title: "Pastel de Nata",
+                description: "O ex-libris da doçaria portuguesa. Uma tartelete de massa folhada estaladiça preenchida com um creme de ovos rico, aromatizado com limão e canela, queimado ligeiramente ao forno.",
+                image: "images/pastel.jpeg",
+                time: "⏱️ Tempo: 1h",
+                portions: "🍽️ Rendimento: 12 unidades",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "1 rolo de massa folhada fresca",
+                    "250ml de leite",
+                    "200g de açúcar",
+                    "50g de farinha de trigo",
+                    "Casca de limão e 1 pau de canela",
+                    "6 gemas de ovo",
+                    "Canela em pó e açúcar em pó para polvilhar"
+                ],
+                instructions: [
+                    "Desenrole a massa folhada, faça um rolo bem apertado e corte em rodelas de cerca de 1,5 cm.",
+                    "Forre forminhas de pastel de nata com cada rodela de massa, espalhando a massa com o polegar humedecido do centro para as bordas.",
+                    "Num tacho, misture a farinha com um pouco de leite. Adicione o restante leite, o açúcar, a casca de limão e o pau de canela. Leve ao lume mexendo sempre até engrossar.",
+                    "Retire do lume, deixe amornar e adicione as gemas batidas, mexendo bem. Coe o creme.",
+                    "Encha as forminhas de massa com o creme e leve ao forno pré-aquecido à temperatura máxima (250°C) por cerca de 10 a 12 minutos até a massa ficar estaladiça e o creme queimado em cima."
+                ]
+            },
+            caldo: {
+                title: "Caldo Verde",
+                description: "A sopa mais famosa de Portugal, nascida na região norte. Uma base reconfortante de puré de batata com rodelas finas de couve-galega e rodelas de chouriço.",
+                image: "images/caldo.jpeg",
+                time: "⏱️ Tempo: 40min",
+                portions: "🍽️ Rendimento: 6 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: [
+                    "500g de batatas descascadas",
+                    "2 cebolas e 2 dentes de alho",
+                    "300g de couve-galega cortada em caldo-verde (muito fina)",
+                    "1 chouriço de carne português",
+                    "Azeite de oliva e sal a gosto",
+                    "Água (cerca de 1,5 litros)"
+                ],
+                instructions: [
+                    "Numa panela, cozinhe as batatas, as cebolas e os alhos em água temperada com sal.",
+                    "Quando os legumes estiverem macios, reduza-os a puré com a varinha mágica diretamente na panela.",
+                    "Adicione o chouriço inteiro ao caldo e deixe ferver por 10 minutos para apurar o sabor.",
+                    "Retire o chouriço, corte-o em rodelas finas e reserve.",
+                    "Adicione a couve-galega cortada finamente ao caldo a ferver e deixe cozinhar sem tampa por cerca de 5 minutos.",
+                    "Sirva bem quente numa tigela, decorando com rodelas de chouriço por cima e um fio de azeite."
+                ]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+
+            // Atualiza os botões ativos
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Atualiza o conteúdo da página
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+
+            // Atualiza Lista de Ingredientes
+            const ingList = document.getElementById('dishIngredients');
+            ingList.innerHTML = data.ingredients.map(item => `<li>${item}</li>`).join('');
+
+            // Atualiza Lista de Modo de Preparo
+            const instList = document.getElementById('dishInstructions');
+            instList.innerHTML = data.instructions.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária Mexicana | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>México 🇲🇽</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <!-- Menu de Seleção de Pratos -->
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('tacos')">🌮 Tacos al Pastor</button>
+            <button class="dish-btn" onclick="selectDish('guacamole')">🥑 Guacamole</button>
+            <button class="dish-btn" onclick="selectDish('enchiladas')">🌶️ Enchiladas Rojas</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <!-- Cartão Principal da Receita com Efeito Glass -->
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Tacos al Pastor</h2>
+            <p class="recipe-description" id="dishDescription">
+                Um dos pratos de rua mais famosos do México. Tortilhas de milho macias recheadas com carne de porco marinada em pimentas e abacaxi, grelhadas na perfeição e servidas com coentro e cebola fresca.
+            </p>
+
+            <!-- Imagem do Prato -->
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/tacos.jpeg" alt="Prato Típico Mexicano">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 40min (+ marinhação)</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>500g de lombo de porco cortado em tiras finas</li>
+                    <li>12 tortilhas de milho pequenas</li>
+                    <li>2 colheres de sopa de pasta de achiote</li>
+                    <li>1/4 de chávena de sumo de ananás (abacaxi) e rodelas de ananás fresco</li>
+                    <li>1 cebola picada e coentro fresco picado</li>
+                    <li>Sumo de limão, sal e pimenta a gosto</li>
+                    <li>Molho picante mexicano a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Misture a pasta de achiote, o sumo de ananás, sal e pimenta para criar a marinada.</li>
+                    <li>Envolva a carne de porco nessa mistura e deixe marinar no frigorífico por pelo menos 2 horas.</li>
+                    <li>Grelhe a carne numa frigideira bem quente com um fio de azeite até dourar, juntamente com pedaços de ananás.</li>
+                    <li>Aqueça ligeiramente as tortilhas de milho numa frigideira seca.</li>
+                    <li>Monte os tacos colocando a carne, pequenos pedaços de ananás grelhado, cebola crua picada, coentro fresco e sumo de limão por cima. Sirva com molho picante.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Troca de Pratos Mexicanos -->
+    <script>
+        const recipes = {
+            tacos: {
+                title: "Tacos al Pastor",
+                description: "Um dos pratos de rua mais famosos do México. Tortilhas de milho macias recheadas com carne de porco marinada em pimentas e abacaxi, grelhadas na perfeição e servidas com coentro e cebola fresca.",
+                image: "images/tacos.jpeg",
+                time: "⏱️ Tempo: 40min (+ marinhação)",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "500g de lombo de porco cortado em tiras finas",
+                    "12 tortilhas de milho pequenas",
+                    "2 colheres de sopa de pasta de achiote",
+                    "1/4 de chávena de sumo de ananás (abacaxi) e rodelas de ananás fresco",
+                    "1 cebola picada e coentro fresco picado",
+                    "Sumo de limão, sal e pimenta a gosto",
+                    "Molho picante mexicano a gosto"
+                ],
+                instructions: [
+                    "Misture a pasta de achiote, o sumo de ananás, sal e pimenta para criar a marinada.",
+                    "Envolva a carne de porco nessa mistura e deixe marinar no frigorífico por pelo menos 2 horas.",
+                    "Grelhe a carne numa frigideira bem quente com um fio de azeite até dourar, juntamente com pedaços de ananás.",
+                    "Aqueça ligeiramente as tortilhas de milho numa frigideira seca.",
+                    "Monte os tacos colocando a carne, pequenos pedaços de ananás grelhado, cebola crua picada, coentro fresco e sumo de limão por cima. Sirva com molho picante."
+                ]
+            },
+            guacamole: {
+                title: "Guacamole Tradicional",
+                description: "O molho e aperitivo mais emblemático do México, feito à base de abacate fresco esmagado com sumo de limão, cebola, tomate, coentros e um toque de pimenta chili.",
+                image: "images/guacamole.jpeg",
+                time: "⏱️ Tempo: 15min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Muito Fácil",
+                ingredients: [
+                    "3 abacates maduros mas firmes",
+                    "1 tomate médio sem sementes cortado em cubos pequenos",
+                    "1/2 cebola roxa picada finamente",
+                    "Coentro fresco picado a gosto",
+                    "Sumo de 1 limão limão/lima fresco",
+                    "1 pimenta jalapeño sem sementes bem picada (opcional)",
+                    "Sal a gosto"
+                ],
+                instructions: [
+                    "Corte os abacates ao meio, retire o caroço e coloque a polpa numa tigela funda.",
+                    "Com um garfo, esmague o abacate grosseiramente (deixando alguns pedaços para ter textura).",
+                    "Adicione imediatamente o sumo de limão para evitar que o abacate oxide e escureça.",
+                    "Junte a cebola roxa, o tomate em cubos, o coentro e a pimenta jalapeño.",
+                    "Tempere com sal a gosto, envolva tudo delicadamente e sirva fresco acompanhado de totopos (nachos de milho)."
+                ]
+            },
+            enchiladas: {
+                title: "Enchiladas Rojas",
+                description: "Tortilhas de milho recheadas com frango desfiado, enroladas, cobertas com um rico molho de tomate e pimenta vermelha, e gratinadas com queijo no forno.",
+                image: "images/enchiladas.jpeg",
+                time: "⏱️ Tempo: 45min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "8 tortilhas de milho",
+                    "2 peitos de frango cozidos e desfiados",
+                    "2 chávenas de molho vermelho para enchiladas (molho de tomate temperado com pimenta chili)",
+                    "150g de queijo ralado (tipo cheddar ou mozzarella)",
+                    "1 cebola picada e natas azedas (sour cream) para decorar",
+                    "Óleo vegetal para passar as tortilhas"
+                ],
+                instructions: [
+                    "Pré-aqueça o forno a 180°C.",
+                    "Passe levemente cada tortilha de milho por uma frigideira com um pouco de óleo quente apenas para amolecerem (sem ficarem crocantes).",
+                    "Recheie cada tortilha com o frango desfiado, enrole-as como charutos e coloque-as lado a lado numa travessa de ir ao forno.",
+                    "Despeje o molho vermelho de enchiladas generosamente por cima das tortilhas enroladas.",
+                    "Polvilhe o queijo ralado por cima e leve ao forno por 15 minutos até o queijo derreter e dourar. Sirva decorado com natas azedas e coentro."
+                ]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+
+            // Atualiza os botões ativos
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Atualiza o conteúdo da página
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+
+            // Atualiza Lista de Ingredientes
+            const ingList = document.getElementById('dishIngredients');
+            ingList.innerHTML = data.ingredients.map(item => `<li>${item}</li>`).join('');
+
+            // Atualiza Lista de Modo de Preparo
+            const instList = document.getElementById('dishInstructions');
+            instList.innerHTML = data.instructions.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+
+</body>
+</html>

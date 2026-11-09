@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária Espanhola | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Espanha 🇪🇸</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <!-- Menu de Seleção de Pratos -->
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('paella')">🥘 Paella Valenciana</button>
+            <button class="dish-btn" onclick="selectDish('churros')">🥖 Churros Espanhóis</button>
+            <button class="dish-btn" onclick="selectDish('tortilla')">🥔 Tortilla de Patatas</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <!-- Cartão Principal da Receita com Efeito Glass -->
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Paella Valenciana</h2>
+            <p class="recipe-description" id="dishDescription">
+                O prato mais internacional da Espanha, originário de Valência. Uma vibrante mistura de arroz cozido com açafrão, carnes, mariscos frescos e legumes, preparado tradicionalmente numa panela rasa e larga chamada paella.
+            </p>
+
+            <!-- Imagem do Prato -->
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/paella.jpeg" alt="Prato Típico Espanhol">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 1h</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 a 6 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>400g de arroz tipo Bomba (ou arbóreo)</li>
+                    <li>500g de mariscos variados (camarão, mexilhões, lula)</li>
+                    <li>300g de frango ou coelho cortado em pedaços</li>
+                    <li>1 cebola e 2 dentes de alho picados</li>
+                    <li>1 pimentão vermelho cortado em tiras</li>
+                    <li>1 pitada generosa de açafrão em pistilos</li>
+                    <li>1 litro de caldo de peixe ou de carne quente</li>
+                    <li>Azeite de oliva, sal e pimenta a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Numa paelheira ou frigideira larga, aqueça o azeite e doure os pedaços de carne até ficarem bem corados.</li>
+                    <li>Adicione a cebola, o alho e o pimentão cortado em tiras, refogando bem.</li>
+                    <li>Acrescente o arroz e misture para absorver os sabores, juntando depois o açafrão.</li>
+                    <li>Despeje o caldo quente por cima e disponha os mariscos uniformemente pela panela.</li>
+                    <li>Deixe cozinhar em lume médio-baixo por cerca de 20 minutos sem mexer, permitindo que se forme uma crosta dourada e crocante no fundo (o socarrat). Sirva quente.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Troca de Pratos Espanhóis -->
+    <script>
+        const recipes = {
+            paella: {
+                title: "Paella Valenciana",
+                description: "O prato mais internacional da Espanha, originário de Valência. Uma vibrante mistura de arroz cozido com açafrão, carnes, mariscos frescos e legumes, preparado tradicionalmente numa panela rasa e larga chamada paella.",
+                image: "images/paella.jpeg",
+                time: "⏱️ Tempo: 1h",
+                portions: "🍽️ Rendimento: 4 a 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "400g de arroz tipo Bomba (ou arbóreo)",
+                    "500g de mariscos variados (camarão, mexilhões, lula)",
+                    "300g de frango ou coelho cortado em pedaços",
+                    "1 cebola e 2 dentes de alho picados",
+                    "1 pimentão vermelho cortado em tiras",
+                    "1 pitada generosa de açafrão em pistilos",
+                    "1 litro de caldo de peixe ou de carne quente",
+                    "Azeite de oliva, sal e pimenta a gosto"
+                ],
+                instructions: [
+                    "Numa paelheira ou frigideira larga, aqueça o azeite e doure os pedaços de carne até ficarem bem corados.",
+                    "Adicione a cebola, o alho e o pimentão cortado em tiras, refogando bem.",
+                    "Acrescente o arroz e misture para absorver os sabores, juntando depois o açafrão.",
+                    "Despeje o caldo quente por cima e disponha os mariscos uniformemente pela panela.",
+                    "Deixe cozinhar em lume médio-baixo por cerca de 20 minutos sem mexer, permitindo que se forme uma crosta dourada e crocante no fundo (o socarrat). Sirva quente."
+                ]
+            },
+            churros: {
+                title: "Churros Espanhóis com Chocolate",
+                description: "Diferentes dos tradicionais recheados, os churros espanhóis originais são compridos, estaladiços por fora e macios por dentro, polvilhados com açúcar e canela e acompanhados de uma taça de chocolate quente bem espesso.",
+                image: "images/churros.jpeg",
+                time: "⏱️ Tempo: 40min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: [
+                    "1 chávena de água",
+                    "2 colheres de sopa de manteiga",
+                    "1 pitada de sal",
+                    "1 chávena de farinha de trigo",
+                    "1 ovo",
+                    "Óleo para fritar",
+                    "Açúcar e canela em pó para polvilhar",
+                    "Chocolate negro derretido com natas para acompanhar"
+                ],
+                instructions: [
+                    "Num tacho, ferva a água com a manteiga e o sal.",
+                    "Adicione a farinha de trigo de uma só vez e mexa energicamente com uma colher de pau até formar uma massa homogénea que se desprenda do fundo.",
+                    "Retire do lume, deixe amornar ligeiramente e incorpore o ovo, mexendo bem até ficar liso.",
+                    "Coloque a massa num saco de pastelaria com bico estriado.",
+                    "Frite tiras de massa diretamente em óleo quente, cortando com uma tesoura no tamanho desejado, até dourarem.",
+                    "Escorra em papel absorvente, passe por açúcar e canela e sirva acompanhado de chocolate quente espesso."
+                ]
+            },
+            tortilla: {
+                title: "Tortilla de Patatas",
+                description: "Um dos pratos mais clássicos das tapas espanholas. Uma omelete grossa feita com ovos e batatas fritas lentamente em azeite com cebola, suculenta por dentro e dourada por fora.",
+                image: "images/tortilla.jpeg",
+                time: "⏱️ Tempo: 45min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "4 batatas grandes descascadas e cortadas em rodelas finas",
+                    "1 cebola grande cortada em juliana",
+                    "6 ovos grandes",
+                    "Azeite de oliva abundante para fritar",
+                    "Sal a gosto"
+                ],
+                instructions: [
+                    "Numa frigideira funda, frite as batatas e a cebola em bastante azeite em lume brando até ficarem macias (sem dourar demasiado). Escorra bem o excesso de azeite.",
+                    "Numa tigela grande, bata os ovos com sal e adicione as batatas e cebolas já cozinhadas, envolvendo bem e deixando repousar por 5 minutos.",
+                    "Aqueça um fio de azeite na frigideira e verta toda a mistura.",
+                    "Deixe cozinhar em lume brando até a base firmar.",
+                    "Com a ajuda de um prato plano grande, vire a tortilla com cuidado e devolva-a à frigideira para cozinhar o outro lado por mais 2 minutos. Sirva morna ou fria."
+                ]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+
+            // Atualiza os botões ativos
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Atualiza o conteúdo da página
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+
+            // Atualiza Lista de Ingredientes
+            const ingList = document.getElementById('dishIngredients');
+            ingList.innerHTML = data.ingredients.map(item => `<li>${item}</li>`).join('');
+
+            // Atualiza Lista de Modo de Preparo
+            const instList = document.getElementById('dishInstructions');
+            instList.innerHTML = data.instructions.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+
+</body>
+</html>
