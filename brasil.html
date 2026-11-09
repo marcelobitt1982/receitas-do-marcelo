@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária Brasileira | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Brasil 🇧🇷</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <!-- Menu de Seleção de Pratos -->
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('feijoada')">🍲 Feijoada</button>
+            <button class="dish-btn" onclick="selectDish('moqueca')">🥘 Moqueca Baiana</button>
+            <button class="dish-btn" onclick="selectDish('coxinha')">🍗 Coxinha de Frango</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <!-- Cartão Principal da Receita com Efeito Glass -->
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Feijoada Tradicional Brasileira</h2>
+            <p class="recipe-description" id="dishDescription">
+                Considerada o prato nacional do Brasil, a feijoada é uma rica e reconfortante combinação de feijão preto cozido lentamente com várias carnes de porco e bovina, servida com acompanhamentos clássicos.
+            </p>
+
+            <!-- Imagem do Prato -->
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/feijoada.jpeg" alt="Prato Típico Brasileiro">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 3h</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 6 a 8 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>500g de feijão preto</li>
+                    <li>200g de carne-seca desalgada</li>
+                    <li>200g de costelinha de porco</li>
+                    <li>150g de lombo suíno salgado</li>
+                    <li>150g de paio e linguiça calabresa</li>
+                    <li>150g de bacon em cubos</li>
+                    <li>1 cebola grande picada</li>
+                    <li>4 dentes de alho picados</li>
+                    <li>Folhas de louro, sal e pimenta-do-reino a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Deixe as carnes salgadas de molho em água fria na geladeira de um dia para o outro, trocando a água de vez em quando.</li>
+                    <li>Cozinhe as carnes mais duras (carne-seca, lombo e costelinha) em água até que fiquem macias. Reserve.</li>
+                    <li>Em uma panela grande, cozinhe o feijão preto com água e as folhas de louro.</li>
+                    <li>Numa frigideira grande, doure o bacon, frite a calabresa e o paio, e refogue a cebola e o alho.</li>
+                    <li>Junte as carnes cozidas e o refogado à panela do feijão. Deixe apurar em fogo baixo para o caldo engrossar e os sabores se misturarem.</li>
+                    <li>Sirva bem quente acompanhado de arroz branco, couve refogada no alho, farofa e fatias de laranja.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Troca de Pratos -->
+    <script>
+        const recipes = {
+            feijoada: {
+                title: "Feijoada Tradicional Brasileira",
+                description: "Considerada o prato nacional do Brasil, a feijoada é uma rica e reconfortante combinação de feijão preto cozido lentamente com várias carnes de porco e bovina, servida com acompanhamentos clássicos.",
+                image: "images/feijoada.jpeg",
+                time: "⏱️ Tempo: 3h",
+                portions: "🍽️ Rendimento: 6 a 8 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "500g de feijão preto",
+                    "200g de carne-seca desalgada",
+                    "200g de costelinha de porco",
+                    "150g de lombo suíno salgado",
+                    "150g de paio e linguiça calabresa",
+                    "150g de bacon em cubos",
+                    "1 cebola grande picada",
+                    "4 dentes de alho picados",
+                    "Folhas de louro, sal e pimenta-do-reino a gosto"
+                ],
+                instructions: [
+                    "Deixe as carnes salgadas de molho em água fria na geladeira de um dia para o outro, trocando a água de vez em quando.",
+                    "Cozinhe as carnes mais duras (carne-seca, lombo e costelinha) em água até que fiquem macias. Reserve.",
+                    "Em uma panela grande, cozinhe o feijão preto com água e as folhas de louro.",
+                    "Numa frigideira grande, doure o bacon, frite a calabresa e o paio, e refogue a cebola e o alho.",
+                    "Junte as carnes cozidas e o refogado à panela do feijão. Deixe apurar em fogo baixo para o caldo engrossar e os sabores se misturarem.",
+                    "Sirva bem quente acompanhado de arroz branco, couve refogada no alho, farofa e fatias de laranja."
+                ]
+            },
+            moqueca: {
+                title: "Moqueca Baiana",
+                description: "Um cozido aromático de peixe fresco com pimentões, tomate, leite de coco e o inconfundível azeite de dendê, repleto de sabores da Bahia.",
+                image: "images/moqueca.jpeg",
+                time: "⏱️ Tempo: 50min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: [
+                    "800g de postas de peixe (robalo, badejo ou garoupa)",
+                    "Suco de 1 limão",
+                    "1 pimentão vermelho, 1 amarelo e 1 verde fatiados",
+                    "2 tomates grandes fatiados",
+                    "1 cebola grande fatiada em rodelas",
+                    "200ml de leite de coco",
+                    "3 colheres de sopa de azeite de dendê",
+                    "Coentro e cheiro-verde frescos picados",
+                    "Sal e pimenta a gosto"
+                ],
+                instructions: [
+                    "Tempere o peixe com o suco de limão, sal e pimenta-do-reino. Reserve por 20 minutos.",
+                    "Em uma panela de barro (ou panela funda), faça camadas intercaladas de cebola, pimentões, tomate e as postas de peixe.",
+                    "Regue tudo com o leite de coco e o azeite de dendê.",
+                    "Tampe a panela e leve ao fogo médio por cerca de 20 a 25 minutos sem mexer, para o peixe não desmanchar.",
+                    "Finalize com bastante coentro e cheiro-verde picados antes de servir com arroz branco e pirão."
+                ]
+            },
+            coxinha: {
+                title: "Coxinha de Frango com Catupiry",
+                description: "O salgado mais amado do Brasil: uma massa leve e saborosa recheada com frango desfiado bem temperado e queijo cremoso, frita até ficar bem crocante.",
+                image: "images/coxinha.jpeg",
+                time: "⏱️ Tempo: 1h 30min",
+                portions: "🍽️ Rendimento: 15 a 20 unidades",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "500g de peito de frango cozido e desfiado",
+                    "1/2 litro de caldo do cozimento do frango",
+                    "2 xícaras de farinha de trigo",
+                    "2 colheres de sopa de manteiga",
+                    "1 requeijão cremoso (tipo Catupiry)",
+                    "1 cebola e 2 dentes de alho picados para o refogado",
+                    "Ovos e farinha de rosca para empanar",
+                    "Óleo para fritar"
+                ],
+                instructions: [
+                    "Refogue o alho e a cebola, adicione o frango desfiado, tempere a gosto e deixe esfriar.",
+                    "Em uma panela, ferva o caldo do frango com a manteiga. Adicione a farinha de trigo de uma vez e mexa vigorosamente até soltar do fundo da panela.",
+                    "Deixe a massa mornar e sove-a até ficar lisa.",
+                    "Abra pequenas porções de massa na mão, coloque uma colher de requeijão e o frango temperado.",
+                    "Feche a massa moldando no formato clássico de gota/coxinha.",
+                    "Passe as coxinhas nos ovos batidos, depois na farinha de rosca e frite em óleo quente até dourarem."
+                ]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+
+            // Atualiza os botões ativos
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Atualiza o conteúdo da página
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+
+            // Atualiza Lista de Ingredientes
+            const ingList = document.getElementById('dishIngredients');
+            ingList.innerHTML = data.ingredients.map(item => `<li>${item}</li>`).join('');
+
+            // Atualiza Lista de Modo de Preparo
+            const instList = document.getElementById('dishInstructions');
+            instList.innerHTML = data.instructions.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+
+</body>
+</html>

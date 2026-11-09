@@ -135,3 +135,136 @@ footer {
     color: #64748b;
     font-size: 0.9rem;
 }
+/* Estilos específicos para a página de receitas */
+.back-link {
+    display: inline-block;
+    color: #60a5fa;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #93c5fd;
+}
+
+.recipe-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    background: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.recipe-card h2 {
+    color: #60a5fa;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-description {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-image-container {
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.recipe-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recipe-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.info-badge {
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #93c5fd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.recipe-section {
+    margin-top: 2rem;
+}
+
+.recipe-section h3 {
+    color: #e2e8f0;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.ingredients-list, .instructions-list {
+    color: #cbd5e1;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.instructions-list li {
+    margin-bottom: 0.8rem;
+}
+/* Seletor de Pratos na Página do País */
+.subtitle {
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.dish-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.dish-btn {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #e2e8f0;
+    padding: 0.7rem 1.4rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dish-btn:hover {
+    background: rgba(37, 99, 235, 0.3);
+    border-color: #60a5fa;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+}
+
+.dish-btn.active {
+    background: #2563eb;
+    border-color: #60a5fa;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.5);
+}
