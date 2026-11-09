@@ -1,4 +1,51 @@
-/* Barra de Busca */
+/* Configuração Geral e Fundo Preto/Azulado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #f1f5f9;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(14, 116, 144, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Cabeçalho e Títulos */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #60a5fa;
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+    margin-bottom: 1rem;
+}
+
+.country-hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.country-hero h2 {
+    font-size: 1.8rem;
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+}
+
+.country-hero p {
+    color: #94a3b8;
+}
+
+/* Barra de Busca Estilo Glass */
 .search-container {
     margin-top: 1rem;
     display: flex;
@@ -9,52 +56,82 @@
     width: 100%;
     max-width: 450px;
     padding: 0.8rem 1.2rem;
-    border: none;
+    border: 1px solid rgba(96, 165, 250, 0.3);
     border-radius: 25px;
     font-size: 1rem;
     outline: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    color: #ffffff;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Grid de Países da Home */
+.search-container input::placeholder {
+    color: #94a3b8;
+}
+
+.search-container input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}
+
+/* Grid de Países */
 .countries-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
+/* Cartões com Efeito Glassmorphism */
 .country-card {
-    background-color: #ffffff;
-    border-radius: 12px;
+    background: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
     padding: 2rem 1.5rem;
     text-align: center;
     text-decoration: none;
-    color: #333333;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: #f1f5f9;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .country-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 12px 40px 0 rgba(37, 99, 235, 0.25);
 }
 
 .country-flag {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
 .country-card h3 {
-    color: #2c3e50;
+    color: #60a5fa;
     font-size: 1.3rem;
     margin-bottom: 0.4rem;
 }
 
 .country-card p {
-    color: #7f8c8d;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    color: #64748b;
     font-size: 0.9rem;
 }
