@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária do Egito | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Egito 🇪🇬</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('koshari')">🍲 Koshari</button>
+            <button class="dish-btn" onclick="selectDish('falafel')">🧆 Taameya (Falafel Egípcio)</button>
+            <button class="dish-btn" onclick="selectDish('molokhia')">🌿 Molokhia</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Koshari Egípcio</h2>
+            <p class="recipe-description" id="dishDescription">
+                O prato nacional do Egito. Uma deliciosa e reconfortante combinação de arroz, macarronete, lentilhas, grão-de-bico, molho de tomate picante e cebola crocante frita por cima.
+            </p>
+
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/koshari.jpeg" alt="Prato Típico Egípcio">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 1h</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 a 6 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>1 chávena de lentilhas castanhas cozidas</li>
+                    <li>1 chávena de arroz branco cozido</li>
+                    <li>1 chávena de macarrão pequeno (tipo cotovelo) cozido</li>
+                    <li>1 chávena de grão-de-bico cozido</li>
+                    <li>2 cebolas grandes cortadas em rodelas finas fritas até ficarem crocantes</li>
+                    <li>Molho de tomate temperado com cominhos e vinagre</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Cozinhe separadamente o arroz, as lentilhas, o macarrão e o grão-de-bico.</li>
+                    <li>Frite as rodelas de cebola em óleo até dourarem bem e ficarem crocantes (reserve o óleo para o molho).</li>
+                    <li>Prepare um molho de tomate aromático refogando alho, adicionando tomate picado, cominhos, sal e um toque de vinagre.</li>
+                    <li>Monte o prato fazendo camadas: primeiro a base de arroz e lentilhas, depois o macarrão, o grão-de-bico, regue com o molho de tomate e finalize com a cebola crocante por cima.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const recipes = {
+            koshari: {
+                title: "Koshari Egípcio",
+                description: "O prato nacional do Egito. Uma deliciosa e reconfortante combinação de arroz, macarronete, lentilhas, grão-de-bico, molho de tomate picante e cebola crocante frita por cima.",
+                image: "images/koshari.jpeg",
+                time: "⏱️ Tempo: 1h",
+                portions: "🍽️ Rendimento: 4 a 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["1 chávena de lentilhas", "1 chávena de arroz", "1 chávena de macarrão", "1 chávena de grão-de-bico", "Cebolas fritas crocantes", "Molho de tomate com cominhos"],
+                instructions: ["Cozinhe o arroz, as lentilhas, o macarrão e o grão-de-bico separadamente.", "Frite as cebolas fatiadas até ficarem bem crocantes.", "Prepare o molho de tomate temperado com cominhos e alho.", "Monte em camadas: arroz/lentilhas, macarrão, grão-de-bico, molho e cebola crocante."]
+            },
+            falafel: {
+                title: "Taameya (Falafel Egípcio)",
+                description: "Diferente do falafel tradicional de grão-de-bico, a versão egípcia (Taameya) é feita com fava amarela partida, ervas frescas e especiarias, resultando num bolinho incrivelmente verde e arejado.",
+                image: "images/falafel.jpeg",
+                time: "⏱️ Tempo: 40min (+ demolhar)",
+                portions: "🍽️ Rendimento: 15 unidades",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["500g de favas secas partidas e sem pele (demolhadas)", "Cebola, alho, coentros e salsa fresca", "1 colher de chá de cominhos e coentro em pó", "Sementes de sésamo para polvilhar", "Óleo para fritar"],
+                instructions: ["Triture as favas demolhadas com as ervas frescas, cebola e alho até obter uma pasta moldável.", "Tempere com as especiarias e sal, batendo a massa para incorporar ar.", "Modele pequenos discos, polvilhe sésamo por cima e frite em óleo quente até dourarem."]
+            },
+            molokhia: {
+                title: "Molokhia Tradicional",
+                description: "Uma sopa verde nutritiva e aromática feita com folhas de molokhia picadas finamente, cozinhadas num caldo rico de frango ou coelho e finalizada com o clássico 'tasha' de alho e coentros.",
+                image: "images/molokhia.jpeg",
+                time: "⏱️ Tempo: 40min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["300g de folhas de molokhia picadas (ou congeladas)", "1 litro de caldo de galinha rico", "1 cabeça de alho esmagada", "2 colheres de sopa de coentros secos", "Ghee ou manteiga"],
+                instructions: ["Ferva o caldo de galinha numa panela.", "Adicione as folhas de molokhia picadas e deixe cozinhar por cerca de 10 minutos sem tapar.", "Numa frigideira, frite o alho esmagado com os coentros secos na manteiga (tasha) até perfumar.", "Despeje este refogado aromático a ferver diretamente sobre a sopa de molokhia, mexa e sirva com arroz."]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+            document.getElementById('dishIngredients').innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('dishInstructions').innerHTML = data.instructions.map(s => `<li>${s}</li>`).join('');
+        }
+    </script>
+</body>
+</html>

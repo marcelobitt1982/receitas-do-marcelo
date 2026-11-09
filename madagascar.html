@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária de Madagascar | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Madagascar 🇲🇬</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('romazava')">🍲 Romazava</button>
+            <button class="dish-btn" onclick="selectDish('ravitoto')">🥘 Ravitoto</button>
+            <button class="dish-btn" onclick="selectDish('koba')">🍌 Koba Akondro</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Romazava (Cozido Tradicional)</h2>
+            <p class="recipe-description" id="dishDescription">
+                O prato nacional de Madagascar. Um rico guisado de carne bovina e suína cozinhado com uma variedade de folhas verdes locais (anamamy), gengibre, tomate e alho.
+            </p>
+
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/romazava.jpeg" alt="Prato Típico de Madagascar">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 1h 30min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 6 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>600g de carne bovina cortada em cubos</li>
+                    <li>300g de carne de porco cortada em cubos</li>
+                    <li>400g de espinafres ou couve picada (para substituir as folhas locais)</li>
+                    <li>2 tomates grandes picados</li>
+                    <li>1 cebola grande e 3 dentes de alho picados</li>
+                    <li>1 pedaço de gengibre ralado</li>
+                    <li>Azeite ou óleo, sal e pimenta a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Numa panela funda, doure os cubos de carne bovina e suína no óleo.</li>
+                    <li>Adicione a cebola, o alho e o gengibre ralado, refogando bem até perfumar.</li>
+                    <li>Junte os tomates picados e adicione água até cobrir toda a carne. Deixe cozinhar em lume brando por 1 hora até a carne ficar tenra.</li>
+                    <li>Adicione as folhas verdes picadas e deixe cozinhar por mais 15 minutos até murcharem e o caldo apurar.</li>
+                    <li>Sirva tradicionalmente acompanhado de arroz branco.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const recipes = {
+            romazava: {
+                title: "Romazava (Cozido Tradicional)",
+                description: "O prato nacional de Madagascar. Um rico guisado de carne bovina e suína cozinhado com uma variedade de folhas verdes locais (anamamy), gengibre, tomate e alho.",
+                image: "images/romazava.jpeg",
+                time: "⏱️ Tempo: 1h 30min",
+                portions: "🍽️ Rendimento: 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["600g de carne bovina", "300g de carne de porco", "400g de espinafres ou couve", "2 tomates picados", "Cebola, alho e gengibre", "Sal, pimenta e óleo"],
+                instructions: ["Doure as carnes no óleo.", "Adicione a cebola, o alho e o gengibre.", "Junte os tomates e cubra com água, cozinhando por 1 hora.", "Adicione as folhas verdes e cozinhe por mais 15 minutos.", "Sirva com arroz branco."]
+            },
+            ravitoto: {
+                title: "Ravitoto com Carne de Porco",
+                description: "Prato emblemático malagaxe feito com folhas de mandioca doces trituradas até formarem uma pasta e cozinhadas lentamente com carne de porco suculenta.",
+                image: "images/ravitoto.jpeg",
+                time: "⏱️ Tempo: 1h 45min",
+                portions: "🍽️ Rendimento: 4 a 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["500g de folhas de mandioca trituradas", "600g de carne de porco (com alguma gordura)", "1 cebola e 2 dentes de alho picados", "2 colheres de óleo vegetal", "Sal a gosto"],
+                instructions: ["Numa panela, frite os pedaços de porco até ficarem bem dourados.", "Junte a cebola e o alho picados.", "Adicione as folhas de mandioca trituradas e cubra com água.", "Deixe cozinhar em fogo baixo por cerca de 1h30 até a água evaporar e a mistura ficar cremosa.", "Sirva quente com arroz."]
+            },
+            koba: {
+                title: "Koba Akondro (Bolo de Banana)",
+                description: "Uma sobremesa tradicional de rua malagaxe feita de puré de banana, amendoim torrado moído e farinha de arroz, embrulhada em folhas de bananeira e cozida no vapor.",
+                image: "images/koba.jpeg",
+                time: "⏱️ Tempo: 1h",
+                portions: "🍽️ Rendimento: 8 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["4 bananas maduras esmagadas", "200g de amendoim torrado e moído", "150g de farinha de arroz", "100g de açúcar de cana", "Folhas de bananeira ou papel vegetal para embrulhar"],
+                instructions: ["Misture o puré de banana com o açúcar e a farinha de arroz até formar uma massa.", "Abra a folha de bananeira (ou papel vegetal), espalhe uma camada da massa e recheie o centro com o amendoim moído.", "Enrole firmemente como um cilindro e ate as pontas.", "Cozinhe no vapor por 45 minutos. Deixe arrefecer, corte em fatias e sirva."]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+            document.getElementById('dishIngredients').innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('dishInstructions').innerHTML = data.instructions.map(s => `<li>${s}</li>`).join('');
+        }
+    </script>
+</body>
+</html>

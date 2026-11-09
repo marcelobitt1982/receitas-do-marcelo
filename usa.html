@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária dos EUA | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Estados Unidos 🇺🇸</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('burger')">🍔 Cheeseburger Clássico</button>
+            <button class="dish-btn" onclick="selectDish('pancakes')">🥞 Panquecas Americanas</button>
+            <button class="dish-btn" onclick="selectDish('cheesecake')">🍰 New York Cheesecake</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Cheeseburger Clássico Americano</h2>
+            <p class="recipe-description" id="dishDescription">
+                O ícone do fast-food mundial. Carne bovina suculenta grelhada, fatia de queijo cheddar derretido, alface fresca, tomate, cebola e molho especial dentro de um pão brioche macio.
+            </p>
+
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/burger.jpeg" alt="Prato Típico Norte-Americano">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 25min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Fácil</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>600g de carne moída (fraldinha ou acém com gordura)</li>
+                    <li>4 pães de hambúrguer (brioche)</li>
+                    <li>4 fatias de queijo cheddar real</li>
+                    <li>Folhas de alface americana e rodelas de tomate</li>
+                    <li>Sal, pimenta-do-reino e manteiga para o pão</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Molhe as mãos e divida a carne em 4 bolas iguais, moldando os hambúrgueres sem apertar demasiado. Tempere com sal e pimenta.</li>
+                    <li>Grelhe numa chapa bem quente com um fio de óleo por cerca de 3 minutos de cada lado.</li>
+                    <li>Coloque a fatia de queijo cheddar por cima da carne nos minutos finais e abafe para derreter.</li>
+                    <li>Doure levemente os pães com um pouco de manteiga na chapa.</li>
+                    <li>Monte o hambúrguer com o pão, alface, tomate, a carne com queijo e feche.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const recipes = {
+            burger: {
+                title: "Cheeseburger Clássico Americano",
+                description: "O ícone do fast-food mundial. Carne bovina suculenta grelhada, fatia de queijo cheddar derretido, alface fresca, tomate, cebola e molho especial dentro de um pão brioche macio.",
+                image: "images/burger.jpeg",
+                time: "⏱️ Tempo: 25min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["600g de carne moída", "4 pães brioche", "4 fatias de queijo cheddar", "Alface e tomate", "Sal, pimenta e manteiga"],
+                instructions: ["Modele os hambúrgueres e tempere com sal e pimenta.", "Grelhe na chapa quente por 3 minutos de cada lado.", "Adicione o cheddar para derreter no final.", "Doure os pães na manteiga e monte com os acompanhamentos."]
+            },
+            pancakes: {
+                title: "Panquecas Americanas (Pancakes)",
+                description: "Panquecas fofinhas e altas, servidas tradizionalmente empilhadas com manteiga e regadas com xarope de ácer (maple syrup).",
+                image: "images/pancakes.jpeg",
+                time: "⏱️ Tempo: 20min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Muito Fácil",
+                ingredients: ["1 e 1/2 chávena de farinha de trigo", "1 colher de sopa de açúcar", "1 colher de sopa de fermento em pó", "1 chávena de leite", "1 ovo e 2 colheres de manteiga derretida"],
+                instructions: ["Misture os ingredientes secos numa tigela.", "Adicione o leite, o ovo e a manteiga derretida, mexendo até formar uma massa homogénea.", "Despeje conchas de massa numa frigideira antiaderente quente.", "Vire quando surgirem bolhinhas na superfície e doure o outro lado."]
+            },
+            cheesecake: {
+                title: "New York Cheesecake",
+                description: "Uma torta de queijo cremosa e densa, assada sobre uma base crocante de bolacha e coberta com uma calda fresca de frutos vermelhos.",
+                image: "images/cheesecake.jpeg",
+                time: "⏱️ Tempo: 1h 30min (+ frio)",
+                portions: "🍽️ Rendimento: 8 fatias",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["200g de bolacha Maria ou maisena triturada", "80g de manteiga derretida", "600g de cream cheese", "150g de açúcar", "3 ovos e 1 colher de essência de baunilha"],
+                instructions: ["Misture a bolacha triturada com a manteiga e pressione no fundo de uma forma redonda.", "Bata o cream cheese com o açúcar, adicione os ovos um a um e a baunilha.", "Despeje sobre a base de bolacha e asse a 160°C por 50 minutos.", "Deixe arrefecer completamente e cubra com calda de frutos vermelhos."]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+            document.getElementById('dishIngredients').innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('dishInstructions').innerHTML = data.instructions.map(s => `<li>${s}</li>`).join('');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária Italiana | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Itália 🇮🇹</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('pizza')">🍕 Pizza Margherita</button>
+            <button class="dish-btn" onclick="selectDish('lasanha')">🍝 Lasanha à Bolognese</button>
+            <button class="dish-btn" onclick="selectDish('tiramisu')">🍰 Tiramisu</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Pizza Margherita Tradicional</h2>
+            <p class="recipe-description" id="dishDescription">
+                A rainha das pizzas napolitanas. Simples, fresca e deliciosa, combinando massa de fermentação lenta, molho de tomate natural, mozzarella de búfala fresca e folhas de manjericão.
+            </p>
+
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/pizza.jpeg" alt="Prato Típico Italiano">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 2h (inclui fermentação)</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 2 pizzas médias</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>300g de farinha de trigo tipo 00</li>
+                    <li>200ml de água morna e 5g de fermento biológico fresco</li>
+                    <li>200g de molho de tomate pelado triturado</li>
+                    <li>250g de mozzarella de búfala</li>
+                    <li>Folhas de manjericão fresco e azeite de oliva</li>
+                    <li>Sal a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Dissolva o fermento na água morna. Misture com a farinha e o sal, amassando bem até obter uma massa lisa. Deixe levedar por 1h30.</li>
+                    <li>Abra a massa com as mãos formando um disco redondo.</li>
+                    <li>Espalhe o molho de tomate, distribue a mozzarella de búfala rasgada e regue com um fio de azeite.</li>
+                    <li>Asse em forno muito quente (máximo possível, idealmente 250°C ou superior) por cerca de 8 a 10 minutos.</li>
+                    <li>Finalize com folhas de manjericão fresco logo após sair do forno.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const recipes = {
+            pizza: {
+                title: "Pizza Margherita Tradicional",
+                description: "A rainha das pizzas napolitanas. Simples, fresca e deliciosa, combinando massa de fermentação lenta, molho de tomate natural, mozzarella de búfala fresca e folhas de manjericão.",
+                image: "images/pizza.jpeg",
+                time: "⏱️ Tempo: 2h",
+                portions: "🍽️ Rendimento: 2 pizzas",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["300g de farinha de trigo", "200ml de água morna", "5g de fermento fresco", "200g de molho de tomate", "250g de mozzarella de búfala", "Manjericão e azeite"],
+                instructions: ["Misture os ingredientes da massa e deixe levedar por 1h30.", "Abra o disco de massa.", "Adicione o molho de tomate e a mozzarella de búfala.", "Asse em forno bem quente por 8-10 minutos.", "Decore com manjericão fresco."]
+            },
+            lasanha: {
+                title: "Lasanha à Bolognese",
+                description: "Camadas alternadas de massa fresca, molho à bolonhesa rico em carne, molho bechamel cremoso e queijo parmesão ralado, gratinado ao forno.",
+                image: "images/lasanha.jpeg",
+                time: "⏱️ Tempo: 1h 30min",
+                portions: "🍽️ Rendimento: 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["500g de massa para lasanha", "500g de carne moída", "Molho de tomate caseiro", "Molho bechamel (manteiga, farinha e leite)", "Queijo parmesão ralado"],
+                instructions: ["Prepare o molho de carne e o molho bechamel.", "Em uma travessa, alterne camadas de massa, molho de carne, bechamel e queijo.", "Repita as camadas até o topo.", "Leve ao forno a 180°C por 35 minutos até gratinar."]
+            },
+            tiramisu: {
+                title: "Tiramisu Clássico",
+                description: "Sobremesa italiana de colher feita com palitos de champanhe embebidos em café espresso, creme suave de queijo mascarpone e cacau em pó.",
+                image: "images/tiramisu.jpeg",
+                time: "⏱️ Tempo: 30min (+ frio)",
+                portions: "🍽️ Rendimento: 6 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["300g de queijo Mascarpone", "4 ovos (gemas e claras separadas)", "100g de açúcar", "Biscoitos champanhe", "Café espresso forte e cacau em pó"],
+                instructions: ["Bata as gemas com o açúcar e misture o mascarpone. Bata as claras em neve e incorpore suavemente.", "Mergulhe os biscoitos no café espresso rapidamente.", "Monte em camadas intercalando biscoitos e o creme.", "Leve ao frigorífico por 4 horas e polvilhe cacau em pó antes de servir."]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+            document.getElementById('dishIngredients').innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('dishInstructions').innerHTML = data.instructions.map(s => `<li>${s}</li>`).join('');
+        }
+    </script>
+</body>
+</html>

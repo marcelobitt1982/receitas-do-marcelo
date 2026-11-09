@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária do Líbano | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Líbano 🇱🇧</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('esfiha')">🥟 Esfiha de Carne</button>
+            <button class="dish-btn" onclick="selectDish('kibe')">🧆 Kibe Assado</button>
+            <button class="dish-btn" onclick="selectDish('kebab')">🍢 Shish Kebab</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Esfiha de Carne Libanesa (Sfiha)</h2>
+            <p class="recipe-description" id="dishDescription">
+                Salgado tradicional libanês com massa leve e macia, recheado com carne moída temperada com cebola, tomate, sumo de limão e especiarias aromáticas.
+            </p>
+
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/esfiha.jpeg" alt="Prato Típico do Líbano">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 1h 30min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 15 unidades</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>500g de farinha de trigo e 10g de fermento biológico</li>
+                    <li>300ml de água morna, 1 colher de açúcar e sal</li>
+                    <li>400g de carne moída (patinho ou acém)</li>
+                    <li>2 tomates picados finamente e 1 cebola grande picada</li>
+                    <li>Sumo de 1 limão e mistura de especiarias (pimenta síria)</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Prepare a massa misturando a farinha, fermento, água, açúcar e sal. Deixe levedar por 45 minutos.</li>
+                    <li>Para o recheio, misture a carne moída crua com a cebola picadinha, o tomate, o sumo de limão e a pimenta síria (o recheio vai cru para o forno).</li>
+                    <li>Divida a massa em pequenas bolinhas, abra em discos e coloque o recheio de carne no centro, modelando em formato triangular ou aberto.</li>
+                    <li>Asse em forno pré-aquecido a 220°C por cerca de 15 minutos até dourarem.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const recipes = {
+            esfiha: {
+                title: "Esfiha de Carne Libanesa (Sfiha)",
+                description: "Salgado tradicional libanês com massa leve e macia, recheado com carne moída temperada com cebola, tomate, sumo de limão e especiarias aromáticas.",
+                image: "images/esfiha.jpeg",
+                time: "⏱️ Tempo: 1h 30min",
+                portions: "🍽️ Rendimento: 15 unidades",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["500g de farinha de trigo", "Fermento biológico e água", "400g de carne moída crua", "Tomate e cebola picados", "Sumo de limão e pimenta síria"],
+                instructions: ["Faça a massa e deixe levedar.", "Misture a carne crua com os vegetais picados, limão e pimenta síria.", "Abra pequenos discos de massa, recheie com a carne.", "Asse em forno quente (220°C) por 15 minutos."]
+            },
+            kibe: {
+                title: "Kibe Assado (Kibbeh bil Sanayeh)",
+                description: "Camadas de massa de trigo para kibe e carne moída temperada, recheadas com carne, cebola, pinhões e assadas no forno com azeite.",
+                image: "images/kibe.jpeg",
+                time: "⏱️ Tempo: 1h",
+                portions: "🍽️ Rendimento: 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["500g de trigo para kibe demolhado", "500g de carne moída", "Cebola picada e folhas de hortelã fresca", "Pimenta síria e canela em pó", "Azeite de oliva"],
+                instructions: ["Misture metade da carne com o trigo demolhado, cebola e hortelã para formar a massa.", "Faça o refogado da outra metade da carne com cebola e especiarias para o recheio.", "Espalhe metade da massa numa assadeira untada, adicione o recheio e cubra com o restante da massa.", "Faça cortes em losangos por cima, regue com azeite e asse a 190°C por 40 minutos."]
+            },
+            kebab: {
+                title: "Shish Kebab de Cordeiro ou Carne",
+                description: "Espetadas de carne picada ou em cubos bem temperada com ervas e especiarias do Médio Oriente, grelhadas na brasa ou chapa.",
+                image: "images/kebab.jpeg",
+                time: "⏱️ Tempo: 35min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["500g de carne de cordero ou bovina picada", "1 cebola ralada e 2 dentes de alho", "Salsa e hortelã picadas", "Cominhos, pimenta síria e sal", "Espetos de madeira ou metal"],
+                instructions: ["Misture a carne com a cebola escorrida, alho, ervas e especiarias.", "Molde a carne em formato de chouriço ao longo dos espetos.", "Grelhe na brasa ou frigideira bem quente virando de todos os lados até dourar.", "Sirva com pão pita, molho de iogurte e salada."]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+            document.getElementById('dishIngredients').innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('dishInstructions').innerHTML = data.instructions.map(s => `<li>${s}</li>`).join('');
+        }
+    </script>
+</body>
+</html>

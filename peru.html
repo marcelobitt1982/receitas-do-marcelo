@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária do Peru | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Peru 🇵🇪</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <!-- Menu de Seleção de Pratos -->
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('ceviche')">🐟 Ceviche Peruano</button>
+            <button class="dish-btn" onclick="selectDish('lomo')">🥩 Lomo Saltado</button>
+            <button class="dish-btn" onclick="selectDish('causa')">🥔 Causa Rellena</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <!-- Cartão Principal da Receita com Efeito Glass -->
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Ceviche Peruano Tradicional</h2>
+            <p class="recipe-description" id="dishDescription">
+                O prato nacional do Peru. Peixe fresco cortado em cubos, marinado instantaneamente em sumo de limão fresco, misturado com cebola roxa, pimenta ají limo, coentros, batata-doce e milho cozido.
+            </p>
+
+            <!-- Imagem do Prato -->
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/ceviche.jpeg" alt="Prato Típico Peruano">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 20min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Fácil</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>600g de peixe branco fresco de firme consistência (robalo, corvina ou linguado)</li>
+                    <li>Sumo espremido de 12 a 15 limões frescos</li>
+                    <li>1 cebola roxa cortada em tiras finas (juliana)</li>
+                    <li>1 pimenta ají limo (ou dedo-de-moça) sem sementes picada finamente</li>
+                    <li>Coentros frescos picados, sal e pimenta a gosto</li>
+                    <li>Batata-doce cozida e milho cozido (choclo) para acompanhar</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Corte o peixe em cubos médios e coloque-o numa tigela de vidro fria. Tempere com sal e a pimenta picada.</li>
+                    <li>Adicione o sumo de limão fresco espremido (sem espremer até ao fundo para não amargar). Misture delicadamente.</li>
+                    <li>Junte a cebola roxa cortada em tiras e os coentros frescos picados.</li>
+                    <li>Deixe repousar por apenas 2 a 3 minutos para que o peixe cure levemente no limão.</li>
+                    <li>Sirva imediatamente bem fresco, acompanhado de rodelas de batata-doce cozida e grãos de milho cozido.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Troca de Pratos Peruanos -->
+    <script>
+        const recipes = {
+            ceviche: {
+                title: "Ceviche Peruano Tradicional",
+                description: "O prato nacional do Peru. Peixe fresco cortado em cubos, marinado instantaneamente em sumo de limão fresco, misturado com cebola roxa, pimenta ají limo, coentros, batata-doce e milho cozido.",
+                image: "images/ceviche.jpeg",
+                time: "⏱️ Tempo: 20min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: [
+                    "600g de peixe branco fresco",
+                    "Sumo de 12 a 15 limões frescos",
+                    "1 cebola roxa em tiras finas",
+                    "1 pimenta ají limo picada",
+                    "Coentros frescos, sal e pimenta",
+                    "Batata-doce e milho cozido para acompanhar"
+                ],
+                instructions: [
+                    "Corte o peixe em cubos e tempere com sal e pimenta.",
+                    "Adicione o sumo de limão fresco e misture.",
+                    "Junte a cebola roxa e os coentros frescos.",
+                    "Deixe curar por apenas 2 a 3 minutos.",
+                    "Sirva imediatamente acompanhado de batata-doce e milho."
+                ]
+            },
+            lomo: {
+                title: "Lomo Saltado",
+                description: "Uma fusão perfeita entre a culinária peruana e a chinesa (chifa). Tiras de carne bovina salteadas numa wok em fogo alto com cebola, tomate, molho de soja, vinagre, servidas com batatas fritas e arroz.",
+                image: "images/lomo.jpeg",
+                time: "⏱️ Tempo: 30min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "600g de lombo bovino cortado em tiras",
+                    "2 tomates maduros cortados em gomos",
+                    "1 cebola roxa grande em tiras",
+                    "3 colheres de sopa de molho de soja (shoyu)",
+                    "2 colheres de sopa de vinagre tinto",
+                    "Coentros frescos, batatas fritas e arroz branco para acompanhar"
+                ],
+                instructions: [
+                    "Tempere as tiras de carne com sal, pimenta e um toque de alho.",
+                    "Numa frigideira muito quente (ou wok), salteie a carne rapidamente com um fio de óleo até dourar. Retire e reserve.",
+                    "Na mesma frigideira, salteie a cebola e o tomate em fogo alto por 1 minuto.",
+                    "Junte a carne de volta, adicione o molho de soja e o vinagre, misturando rapidamente para incorporar os sabores.",
+                    "Misture as batatas fritas crocantes no final, polvilhe coentros e sirva com arroz branco."
+                ]
+            },
+            causa: {
+                title: "Causa Rellena Limeña",
+                description: "Um prato frio à base de puré de batata amarela temperada com pasta de pimenta ají amarillo e limão, recheado com frango desfiado cremoso e abacate.",
+                image: "images/causa.jpeg",
+                time: "⏱️ Tempo: 50min",
+                portions: "🍽️ Rendimento: 6 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "1kg de batata amarela cozida e espremida",
+                    "3 colheres de sopa de pasta de ají amarillo",
+                    "Sumo de 2 limões e azeite",
+                    "2 peitos de frango cozidos e desfiados misturados com maionese",
+                    "1 abacate maduro cortado em fatias",
+                    "Sal e pimenta a gosto"
+                ],
+                instructions: [
+                    "Misture a batata espremida com a pasta de ají amarillo, o sumo de limão, azeite e sal até obter uma massa lisa e homogénea.",
+                    "Numa travessa ou aro de montagem, coloque metade da camada de puré de batata no fundo.",
+                    "Adicione uma camada de fatias de abacate e, por cima, o frango desfiado misturado com maionese.",
+                    "Cubra com o restante puré de batata, pressione levemente e decore com azeitonas e ovo cozido.",
+                    "Leve ao frigorífico antes de servir bem fresco."
+                ]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+
+            // Atualiza os botões ativos
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Atualiza o conteúdo da página
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+
+            // Atualiza Lista de Ingredientes
+            const ingList = document.getElementById('dishIngredients');
+            ingList.innerHTML = data.ingredients.map(item => `<li>${item}</li>`).join('');
+
+            // Atualiza Lista de Modo de Preparo
+            const instList = document.getElementById('dishInstructions');
+            instList.innerHTML = data.instructions.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+
+</body>
+</html>

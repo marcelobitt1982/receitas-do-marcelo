@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária de Israel | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>Israel 🇮🇱</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('hummus')">🥣 Hummus Cremoso</button>
+            <button class="dish-btn" onclick="selectDish('shakshuka')">🍳 Shakshuka</button>
+            <button class="dish-btn" onclick="selectDish('falafel')">🧆 Falafel Israelita</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Hummus Cremoso Tradicional</h2>
+            <p class="recipe-description" id="dishDescription">
+                Uma pasta aveludada e rica de grão-de-bico cozido, tahini (pasta de sésamo), sumo de limão e alho, servida com azeite de oliva, cominhos e pão pita fresco.
+            </p>
+
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/hummus.jpeg" alt="Prato Típico de Israel">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 20min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Fácil</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>2 chávenas de grão-de-bico cozido (sem pele para maior suavidade)</li>
+                    <li>1/3 de chávena de tahini de boa qualidade</li>
+                    <li>Sumo de 1 limão sumo fresco</li>
+                    <li>2 dentes de alho</li>
+                    <li>2 a 3 cubos de gelo (ajudam a deixar o hummus cremoso)</li>
+                    <li>Azeite, cominhos e paprica para servir</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Coloque o grão-de-bico cozido num processador de alimentos e bata até começar a triturar.</li>
+                    <li>Adicione o tahini, o sumo de limão, o alho e o sal. Bata bem.</li>
+                    <li>Com o processador ligado, adicione os cubos de gelo um a um. Isto criará uma textura incrivelmente cremosa e clara.</li>
+                    <li>Transfira para um prato fundo, faça uma cavidade no centro com as costas de uma colher e regue generosamente com azeite, paprica e cominhos. Sirva com pão pita.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const recipes = {
+            hummus: {
+                title: "Hummus Cremoso Tradicional",
+                description: "Uma pasta aveludada e rica de grão-de-bico cozido, tahini (pasta de sésamo), sumo de limão e alho, servida com azeite de oliva, cominhos e pão pita fresco.",
+                image: "images/hummus.jpeg",
+                time: "⏱️ Tempo: 20min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["2 chávenas de grão-de-bico cozido", "1/3 chávena de tahini", "Sumo de 1 limão", "2 dentes de alho", "Cubos de gelo", "Azeite e paprica"],
+                instructions: ["Triture o grão-de-bico no processador.", "Adicione o tahini, limão, alho e sal.", "Bata adicionando cubos de gelo para dar cremosidade.", "Sirva num prato com cova no centro, regado com azeite e paprica."]
+            },
+            shakshuka: {
+                title: "Shakshuka",
+                description: "Ovos escalfados num molho rico, aromático e picante de tomates maduros, cebola, pimentões e especiarias do Médio Oriente.",
+                image: "images/shakshuka.jpeg",
+                time: "⏱️ Tempo: 30min",
+                portions: "🍽️ Rendimento: 3 a 4 porções",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: ["4 ovos", "4 tomates maduros picados", "1 cebola e 1 pimentão vermelho picados", "2 dentes de alho", "Cominhos, paprica fumada e pimenta de Cayenne", "Salsa fresca"],
+                instructions: ["Refogue a cebola, o alho e o pimentão numa frigideira.", "Adicione os tomates picados e as especiarias, cozinhando até formar um molho espesso.", "Faça pequenos buracos no molho e quebre os ovos dentro deles.", "Tampe a frigideira e cozinhe em lume brando até as claras firmarem e as gemas ficarem cremosas."]
+            },
+            falafel: {
+                title: "Falafel Israelita",
+                description: "Bolinhos crocantes e dourados de grão-de-bico fresco temperado com ervas e especiarias, servidos frequentemente em pão pita com hummus e salada.",
+                image: "images/falafel-il.jpeg",
+                time: "⏱️ Tempo: 30min (+ demolhar)",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: ["500g de grão-de-bico cru (demolhado por 24h)", "1 cebola e 3 dentes de alho", "Salsa, coentros e hortelã fresca", "Cominhos, coentro em pó e fermento", "Óleo para fritar"],
+                instructions: ["Triture o grão-de-bico cru demolhado com as ervas, cebola e alho.", "Tempere com as especiarias, sal e uma pitada de fermento.", "Modele pequenas bolas ou discos achatados.", "Frite em óleo quente até ficarem bem dourados e crocantes por fora."]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+            document.getElementById('dishIngredients').innerHTML = data.ingredients.map(i => `<li>${i}</li>`).join('');
+            document.getElementById('dishInstructions').innerHTML = data.instructions.map(s => `<li>${s}</li>`).join('');
+        }
+    </script>
+</body>
+</html>
