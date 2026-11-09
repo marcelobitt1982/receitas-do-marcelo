@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores do Mundo | Caderno de Receitas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sabores do Mundo</h1>
+        
+    
+
+        <!-- Barra de Busca -->
+        <div class="search-container">
+            <input type="text" id="searchInput" onkeyup="filterCountries()" placeholder="🔍 Buscar receita ou país...">
+        </div>
+    </header>
+
+    <main>
+        <section class="country-hero">
+            <h2>Explore por Culinária</h2>
+            <p>Selecione um país abaixo para conferir as receitas tradicionais de cada região.</p>
+        </section>
+
+        <!-- Grid de Cartões dos Países -->
+        <section class="countries-grid" id="countriesGrid">
+            <a href="brasil.html" class="country-card">
+                <span class="country-flag">🇧🇷</span>
+                <h3>Brasil</h3>
+                <p>Feijoada, Moqueca, Coxinha e mais</p>
+            </a>
+
+            <a href="franca.html" class="country-card">
+                <span class="country-flag">🇫🇷</span>
+                <h3>França</h3>
+                <p>Ratatouille, Petit Gâteau, Quiche</p>
+            </a>
+
+            <a href="portugal.html" class="country-card">
+                <span class="country-flag">🇵🇹</span>
+                <h3>Portugal</h3>
+                <p>Bacalhau à Brás, Pastel de Nata</p>
+            </a>
+
+            <a href="espanha.html" class="country-card">
+                <span class="country-flag">🇪🇸</span>
+                <h3>Espanha</h3>
+                <p>Paella, Churros, Tortilla de Patatas</p>
+            </a>
+
+            <a href="outros.html" class="country-card">
+                <span class="country-flag">🌍</span>
+                <h3>Outros Países</h3>
+                <p>Itália, México, Japão e outros</p>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Filtro Rápido da Busca -->
+    <script>
+        function filterCountries() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.country-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
