@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinária Francesa | Sabores do Mundo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-link">← Voltar à Página Principal</a>
+        <h1>França 🇫🇷</h1>
+        <p class="subtitle">Escolha um prato típico para ver a receita completa</p>
+        
+        <!-- Menu de Seleção de Pratos -->
+        <nav class="dish-selector">
+            <button class="dish-btn active" onclick="selectDish('ratatouille')">🍅 Ratatouille</button>
+            <button class="dish-btn" onclick="selectDish('petitgateau')">🍫 Petit Gâteau</button>
+            <button class="dish-btn" onclick="selectDish('quiche')">🥧 Quiche Lorraine</button>
+        </nav>
+    </header>
+
+    <main class="recipe-container">
+        <!-- Cartão Principal da Receita com Efeito Glass -->
+        <article class="recipe-card glass-panel">
+            <h2 id="dishTitle">Ratatouille Provençal</h2>
+            <p class="recipe-description" id="dishDescription">
+                Um clássico reconfortante da região da Provença, este prato vegetariano combina legumes frescos cortados finamente, cozinhados lentamente em azeite, ervas aromáticas e molho de tomate caseiro.
+            </p>
+
+            <!-- Imagem do Prato -->
+            <div class="recipe-image-container">
+                <img id="dishImage" src="images/ratatouille.jpeg" alt="Prato Típico Francês">
+            </div>
+
+            <div class="recipe-info">
+                <div class="info-badge" id="dishTime">⏱️ Tempo: 1h 15min</div>
+                <div class="info-badge" id="dishPortions">🍽️ Rendimento: 4 porções</div>
+                <div class="info-badge" id="dishDifficulty">🔥 Dificuldade: Média</div>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Ingredientes</h3>
+                <ul class="ingredients-list" id="dishIngredients">
+                    <li>1 beringela média fatiada</li>
+                    <li>2 curgetes (abobrinhas) fatiadas</li>
+                    <li>4 tomates maduros fatiados</li>
+                    <li>1 cebola picada e 2 dentes de alho picados</li>
+                    <li>1 lata de molho de tomate natural</li>
+                    <li>Azeite de oliva, tomilho e alecrim fresco a gosto</li>
+                    <li>Sal e pimenta-do-reino a gosto</li>
+                </ul>
+            </div>
+
+            <div class="recipe-section">
+                <h3>Modo de Preparo</h3>
+                <ol class="instructions-list" id="dishInstructions">
+                    <li>Pré-aqueça o forno a 190°C.</li>
+                    <li>Numa assadeira, espalhe o molho de tomate refogado com a cebola, o alho e um fio de azeite.</li>
+                    <li>Disponha as rodelas de beringela, curgete e tomate de forma alternada e em círculos concêntricos sobre o molho.</li>
+                    <li>Tempere com sal, pimenta, folhas de tomilho, alecrim e regue com um generoso fio de azeite por cima.</li>
+                    <li>Cubra com papel manteiga e leve ao forno por cerca de 45 minutos. Retire o papel nos últimos 15 minutos para dourar levemente. Sirva quente.</li>
+                </ol>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sabores do Mundo - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script de Troca de Pratos Franceses -->
+    <script>
+        const recipes = {
+            ratatouille: {
+                title: "Ratatouille Provençal",
+                description: "Um clássico reconfortante da região da Provença, este prato vegetariano combina legumes frescos cortados finamente, cozinhados lentamente em azeite, ervas aromáticas e molho de tomate caseiro.",
+                image: "images/ratatouille.jpeg",
+                time: "⏱️ Tempo: 1h 15min",
+                portions: "🍽️ Rendimento: 4 porções",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "1 beringela média fatiada",
+                    "2 curgetes (abobrinhas) fatiadas",
+                    "4 tomates maduros fatiados",
+                    "1 cebola picada e 2 dentes de alho picados",
+                    "1 lata de molho de tomate natural",
+                    "Azeite de oliva, tomilho e alecrim fresco a gosto",
+                    "Sal e pimenta-do-reino a gosto"
+                ],
+                instructions: [
+                    "Pré-aqueça o forno a 190°C.",
+                    "Numa assadeira, espalhe o molho de tomate refogado com a cebola, o alho e um fio de azeite.",
+                    "Disponha as rodelas de beringela, curgete e tomate de forma alternada e em círculos concêntricos sobre o molho.",
+                    "Tempere com sal, pimenta, folhas de tomilho, alecrim e regue com um generoso fio de azeite por cima.",
+                    "Cubra com papel manteiga e leve ao forno por cerca de 45 minutos. Retire o papel nos últimos 15 minutos para dourar levemente. Sirva quente."
+                ]
+            },
+            petitgateau: {
+                title: "Petit Gâteau",
+                description: "Uma sobremesa célebre em todo o mundo, que consiste num pequeno bolo de chocolate de exterior firme e um interior cremoso e líquido que se derrama ao cortar.",
+                image: "images/petitgateau.jpeg",
+                time: "⏱️ Tempo: 30min",
+                portions: "🍽️ Rendimento: 6 unidades",
+                difficulty: "🔥 Dificuldade: Fácil",
+                ingredients: [
+                    "200g de chocolate meio amargo de boa qualidade",
+                    "2 colheres de sopa de manteiga sem sal",
+                    "1/4 de xícara de açúcar de confeiteiro",
+                    "2 ovos inteiros e 2 gemas",
+                    "2 colheres de sopa de farinha de trigo",
+                    "Manteiga e cacau em pó para untar as forminhas"
+                ],
+                instructions: [
+                    "Derreta o chocolate com a manteiga em banho-maria ou no micro-ondas.",
+                    "Numa tigela, bata os ovos, as gemas e o açúcar com um fouet até obter uma mistura homogénea.",
+                    "Adicione o chocolate derretido à mistura de ovos e mexa bem.",
+                    "Incorpore a farinha de trigo delicadamente até formar uma massa lisa.",
+                    "Despeje em forminhas untadas com manteiga e cacau em pó.",
+                    "Asse em forno preaquecido a 200°C por exatos 8 a 10 minutos (o centro deve continuar mole). Desenforme ainda quente e sirva com gelado de baunilha."
+                ]
+            },
+            quiche: {
+                title: "Quiche Lorraine",
+                description: "Uma tarte salgada tradicional da região da Lorena, com uma massa quebrada crocante e um recheio rico e cremoso à base de ovos, natas, queijo e pedaços de bacon.",
+                image: "images/quiche.jpeg",
+                time: "⏱️ Tempo: 50min",
+                portions: "🍽️ Rendimento: 6 fatias",
+                difficulty: "🔥 Dificuldade: Média",
+                ingredients: [
+                    "1 rolo de massa quebrada (ou massa brisé)",
+                    "200g de bacon em cubos",
+                    "3 ovos grandes",
+                    "200ml de natas frescas (creme de leite fresco)",
+                    "100g de queijo Gruyère ou Emmental ralado",
+                    "Pitada de noz-moscada ralada",
+                    "Sal e pimenta-do-reino a gosto"
+                ],
+                instructions: [
+                    "Forre uma forma de torta com a massa quebrada, pique o fundo com um garfo e leve ao forno pré-aquecido a 180°C por 10 minutos para pré-assar.",
+                    "Numa frigideira, doure os cubos de bacon até ficarem crocantes e reserve.",
+                    "Numa tigela, bata os ovos com as natas, tempere com sal, pimenta e a noz-moscada.",
+                    "Espalhe o bacon e o queijo ralado sobre a massa pré-assada.",
+                    "Despeje a mistura de ovos e natas por cima.",
+                    "Leve ao forno por cerca de 30 minutos ou até que a superfície esteja dourada e firme."
+                ]
+            }
+        };
+
+        function selectDish(dishKey) {
+            const data = recipes[dishKey];
+            if (!data) return;
+
+            // Atualiza os botões ativos
+            document.querySelectorAll('.dish-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Atualiza o conteúdo da página
+            document.getElementById('dishTitle').innerText = data.title;
+            document.getElementById('dishDescription').innerText = data.description;
+            document.getElementById('dishImage').src = data.image;
+            document.getElementById('dishTime').innerText = data.time;
+            document.getElementById('dishPortions').innerText = data.portions;
+            document.getElementById('dishDifficulty').innerText = data.difficulty;
+
+            // Atualiza Lista de Ingredientes
+            const ingList = document.getElementById('dishIngredients');
+            ingList.innerHTML = data.ingredients.map(item => `<li>${item}</li>`).join('');
+
+            // Atualiza Lista de Modo de Preparo
+            const instList = document.getElementById('dishInstructions');
+            instList.innerHTML = data.instructions.map(step => `<li>${step}</li>`).join('');
+        }
+    </script>
+
+</body>
+</html>
