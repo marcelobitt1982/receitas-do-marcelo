@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Culinária do Egito | Sabores do Mundo</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    @keyframes backgroundPan {
+        0% {
+            background-position: center 0%;
+        }
+        50% {
+            background-position: center 60%; /* Sobe até 60% e para por aí */
+        }
+        100% {
+            background-position: center 0%;
+        }
+    }
+
+    body {
+        background-image: url('fundo.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        animation: backgroundPan 15s ease-in-out infinite;
+        color: #ffffff;
+    }
+</style>
 </head>
 <body>
 
